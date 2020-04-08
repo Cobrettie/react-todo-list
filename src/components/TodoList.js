@@ -3,12 +3,12 @@
 import React from 'react';
 import Todo from './Todo';
 
-export default function ToDoList({todos}) {
-  console.log(todos)
+export default function ToDoList({todoItems}) {
+  console.log(todoItems)
   return (
-    todos.map(item => {
+    todoItems.map(item => {
       return (
-        <Todo item={item} />
+        <Todo item={item} key={item.id} />
       )
     })
   )
