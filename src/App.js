@@ -40,6 +40,10 @@ class App extends React.Component {
     console.log('after adding todoItem', this.state.todoItems)
   }
 
+  toggleTodoItem = itemId => {
+    console.log(itemId);
+  }
+
   render() {
     return (
       <div>
