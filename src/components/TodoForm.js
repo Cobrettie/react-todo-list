@@ -20,7 +20,6 @@ class TodoForm extends React.Component {
   }
 
   render() {
-    console.log('TodoForm props', this.props)
     return (
       <form onSubmit={this.submitItem}>
         <input 

@@ -1,6 +1,7 @@
 import React from 'react';
 import ToDoForm from './components/TodoForm';
 import ToDoList from './components/TodoList';
+import './components/Todo.css';
 
 const todoItems = [
   {
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   addTodoItem = (event, todoItem) => {
-    console.log('event', event, 'todoItem', todoItem)
+    // console.log('event', event, 'todoItem', todoItem)
     event.preventDefault()
 
     const newTodoItem = {
@@ -37,11 +38,23 @@ class App extends React.Component {
     this.setState({
       todoItems: [...this.state.todoItems, newTodoItem]
     })
-    console.log('after adding todoItem', this.state.todoItems)
+    // console.log('after adding todoItem', this.state.todoItems)
   }
 
   toggleTodoItem = itemId => {
     console.log(itemId);
+
+    this.setState({
+      todoItems: this.state.todoItems.map(item => {
+        if (itemId === item.id) {
+          return {
+            ...item,
+            completed: !item.completed
+          }
+        }
+        return item
+      })
+    })
   }
 
   render() {
@@ -49,7 +62,10 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <ToDoForm addItem={this.addTodoItem} />
-        <ToDoList todoItems={this.state.todoItems} /> 
+        <ToDoList 
+          todoItems={this.state.todoItems} 
+          toggleTodoItem={this.toggleTodoItem}
+        /> 
       </div>
     );
   }
