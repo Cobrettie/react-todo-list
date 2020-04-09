@@ -10,6 +10,7 @@ export default function ToDoList(props) {
           <Todo key={item.id} item={item} toggleTodoItem={props.toggleTodoItem} />
         )
       })}
+      <button onClick={props.clearCompleted}>Clear Completed Items</button>
     </div>
   )
 }
