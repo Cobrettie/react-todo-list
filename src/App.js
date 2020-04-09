@@ -2,6 +2,7 @@ import React from 'react';
 import ToDoForm from './components/TodoForm';
 import ToDoList from './components/TodoList';
 import './components/Todo.css';
+import { MainAppContainerDiv } from './components/TodoStyles';
 
 const todoItems = [
   {
@@ -67,7 +68,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <MainAppContainerDiv>
         <h2>Welcome to your Todo App!</h2>
         <ToDoForm addItem={this.addTodoItem} />
         <ToDoList 
@@ -75,7 +76,7 @@ class App extends React.Component {
           toggleTodoItem={this.toggleTodoItem}
           clearCompleted={this.clearCompleted}
         /> 
-      </div>
+      </MainAppContainerDiv>
     );
   }
 }
