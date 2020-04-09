@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
 
-export default function ToDoList(props) {
+const ToDoList = props => {
   console.log('props', props)
   return (
     <div>
@@ -14,3 +14,5 @@ export default function ToDoList(props) {
     </div>
   )
 }
+
+export default ToDoList

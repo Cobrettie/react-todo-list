@@ -81,3 +81,13 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+
+
+// refactor components to use similar naming/styling
+
+// style application
+
+// stretch goals
+

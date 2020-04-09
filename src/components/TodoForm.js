@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -16,7 +16,12 @@ class TodoForm extends React.Component {
     event.preventDefault()
 
     this.setState({todoItem: ''})
-    this.props.addItem(event, this.state.todoItem)
+
+    if (this.state.todoItem === '') {
+      this.props.addItem(event, 'Task')
+    } else {
+      this.props.addItem(event, this.state.todoItem)
+    }
   }
 
   render() {
@@ -25,6 +30,7 @@ class TodoForm extends React.Component {
         <input 
           type='text'
           name='todoItem'
+          placeholder='Task'
           value={this.state.todoItem}
           onChange={this.handleChange}
         />
