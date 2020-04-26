@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import ToDoForm from './components/TodoForm';
 import ToDoList from './components/TodoList';
 import TestComponent from './components/TestComponent';
@@ -20,63 +22,60 @@ const todoItems = [
 ]
 
 class App extends React.Component {
-  // you will need a place to store your state in this component.
-  constructor() {
-    super();
-    this.state = {
-      todoItems
-    }
+  constructor(props) {
+    super(props);
+    console.log('App props', props)
   }
 
-  addTodoItem = (event, todoItem) => {
-    // console.log('event', event, 'todoItem', todoItem)
-    event.preventDefault()
+  // addTodoItem = (event, todoItem) => {
+  //   // console.log('event', event, 'todoItem', todoItem)
+  //   event.preventDefault()
 
-    const newTodoItem = {
-      task: todoItem,
-      id: Date.now(),
-      completed: false
-    }
+  //   const newTodoItem = {
+  //     task: todoItem,
+  //     id: Date.now(),
+  //     completed: false
+  //   }
 
-    this.setState({
-      todoItems: [...this.state.todoItems, newTodoItem]
-    })
-    // console.log('after adding todoItem', this.state.todoItems)
-  }
+  //   this.setState({
+  //     todoItems: [...this.state.todoItems, newTodoItem]
+  //   })
+  //   // console.log('after adding todoItem', this.state.todoItems)
+  // }
 
-  toggleTodoItem = itemId => {
-    console.log(itemId);
+  // toggleTodoItem = itemId => {
+  //   console.log(itemId);
 
-    this.setState({
-      todoItems: this.state.todoItems.map(item => {
-        if (itemId === item.id) {
-          return {
-            ...item,
-            completed: !item.completed
-          }
-        }
-        return item
-      })
-    })
-  }
+  //   this.setState({
+  //     todoItems: this.state.todoItems.map(item => {
+  //       if (itemId === item.id) {
+  //         return {
+  //           ...item,
+  //           completed: !item.completed
+  //         }
+  //       }
+  //       return item
+  //     })
+  //   })
+  // }
 
-  clearCompleted = event => {
-    event.preventDefault()
+  // clearCompleted = event => {
+  //   event.preventDefault()
 
-    this.setState({
-      todoItems: this.state.todoItems.filter(item => !item.completed)
-    })
-  }
+  //   this.setState({
+  //     todoItems: this.state.todoItems.filter(item => !item.completed)
+  //   })
+  // }
 
   render() {
     return (
       <MainAppContainerDiv>
         <MainHeader>To Do</MainHeader>
-        <ToDoForm addItem={this.addTodoItem} />
+        {/* <ToDoForm addItem={this.addTodoItem} /> */}
         <ToDoList 
-          todoItems={this.state.todoItems} 
-          toggleTodoItem={this.toggleTodoItem}
-          clearCompleted={this.clearCompleted}
+          todoItems={this.props.todoItemsArray} 
+          // toggleTodoItem={this.toggleTodoItem}
+          // clearCompleted={this.clearCompleted}
         /> 
         <TestComponent />
       </MainAppContainerDiv>
@@ -84,7 +83,14 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log('App mSTP state', state)
+  return {
+    todoItemsArray: state
+  }
+}
+
+export default connect(mapStateToProps, {})(App);
 
 
 
