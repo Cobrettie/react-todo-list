@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -6,38 +7,51 @@ class TodoForm extends React.Component {
     this.state = {
       todoItem: ''
     }
+  console.log('TodoForm component props, state', props, this.state)
   }
+
+  // handleChange = event => {
+  //   this.setState({ [event.target.name]: event.target.value })
+  // }
+
+  // submitItem = event => {
+  //   event.preventDefault()
+
+  //   this.setState({todoItem: ''})
+
+  //   if (this.state.todoItem === '') {
+  //     this.props.addItem(event, 'Task')
+  //   } else {
+  //     this.props.addItem(event, this.state.todoItem)
+  //   }
+  // }
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
 
-  submitItem = event => {
-    event.preventDefault()
-
-    this.setState({todoItem: ''})
-
-    if (this.state.todoItem === '') {
-      this.props.addItem(event, 'Task')
-    } else {
-      this.props.addItem(event, this.state.todoItem)
-    }
-  }
-
   render() {
     return (
-      <form onSubmit={this.submitItem}>
-        <input 
+      <form>
+        <h2>TodoForm component</h2>
+        <input
           type='text'
           name='todoItem'
           placeholder='Task'
           value={this.state.todoItem}
           onChange={this.handleChange}
         />
-        <button>Add to list</button>
+        <button>Add</button>
       </form>
     )
   }
 }
 
-export default TodoForm;
+function mapStateToProps(state) {
+  console.log('TodoForm mSTP', state)
+  return {
+    state
+  }
+}
+
+export default connect(mapStateToProps, {})(TodoForm);

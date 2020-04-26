@@ -66,11 +66,14 @@ class App extends React.Component {
   //   })
   // }
 
+  // <ToDoForm addItem={this.addTodoItem} />
+
+
   render() {
     return (
       <MainAppContainerDiv>
         <MainHeader>To Do</MainHeader>
-        {/* <ToDoForm addItem={this.addTodoItem} /> */}
+        <ToDoForm />
         <ToDoList 
           todoItems={this.props.todoItemsArray} 
           // toggleTodoItem={this.toggleTodoItem}
