@@ -2,7 +2,7 @@ import React from 'react';
 import ToDoForm from './components/TodoForm';
 import ToDoList from './components/TodoList';
 import './components/Todo.css';
-import { MainAppContainerDiv } from './components/TodoStyles';
+import { MainAppContainerDiv, MainHeader } from './components/TodoStyles';
 
 const todoItems = [
   {
@@ -69,7 +69,7 @@ class App extends React.Component {
   render() {
     return (
       <MainAppContainerDiv>
-        <h2>Welcome to your Todo App!</h2>
+        <MainHeader>To Do</MainHeader>
         <ToDoForm addItem={this.addTodoItem} />
         <ToDoList 
           todoItems={this.state.todoItems} 
