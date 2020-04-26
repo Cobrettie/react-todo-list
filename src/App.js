@@ -1,8 +1,10 @@
 import React from 'react';
 import ToDoForm from './components/TodoForm';
 import ToDoList from './components/TodoList';
-import './components/Todo.css';
+import TestComponent from './components/TestComponent';
+
 import { MainAppContainerDiv, MainHeader } from './components/TodoStyles';
+import './components/Todo.css';
 
 const todoItems = [
   {
@@ -76,6 +78,7 @@ class App extends React.Component {
           toggleTodoItem={this.toggleTodoItem}
           clearCompleted={this.clearCompleted}
         /> 
+        <TestComponent />
       </MainAppContainerDiv>
     );
   }
