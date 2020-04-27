@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions/actionTypes';
+import { addTodo } from '../actions/actions';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -11,16 +11,14 @@ class TodoForm extends React.Component {
   console.log('TodoForm component props, state', props, this.state)
   }
 
- 
-
-handleSubmit = event => {
-  event.preventDefault();
-  // set new state to array 
-  // display new data showing new item
-  // this.setState({todoItem: ''})
-  addTodo(this.state.todoItem)
-  this.setState({ [event.target.name]: event.target.value })
-}
+  handleSubmit = event => {
+    event.preventDefault();
+    // set new state to array 
+    // display new data showing new item
+    // this.setState({todoItem: ''})
+    addTodo(this.state.todoItem)
+    this.setState({ [event.target.name]: event.target.value })
+  }
 
 
   handleChange = event => {

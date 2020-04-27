@@ -8,7 +8,7 @@ const ToDoList = props => {
   console.log('TodoList props', props)
   return (
     <TodoListContainer>
-      {props.todoItems.map(item => {
+      {props.todoItemsArray.map(item => {
         return (
           <Todo key={item.id} item={item} />
         )
@@ -21,7 +21,7 @@ const ToDoList = props => {
 const mapStateToProps = state => {
   console.log('TodoList mSTP', state)
   return {
-    todoItems: state.todoItemsArray
+    todoItemsArray: state.todoItemsArray
   }
 }
 

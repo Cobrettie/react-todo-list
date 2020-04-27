@@ -1,9 +1,9 @@
-export const ADD_TODO = 'ADD_TODO';
+const ADD_TODO = 'ADD_TODO';
 
 export function addTodo(todoItem) {
   console.log('todoItem action creator', todoItem)
   return {
-    type: 'ADD_TODO',
-    payload: todoItem
+    type: ADD_TODO,
+    todoItem: todoItem
   }
 }

@@ -62,7 +62,7 @@ class App extends React.Component {
         <MainHeader>To Do</MainHeader>
         <ToDoForm />
         <ToDoList 
-          todoItems={this.props.todoItemsArray.todoItems} 
+          todoItemsArray={this.props.todoItemsArray.todoItemsArray} 
           // toggleTodoItem={this.toggleTodoItem}
           // clearCompleted={this.clearCompleted}
         /> 

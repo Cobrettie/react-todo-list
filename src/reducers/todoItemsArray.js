@@ -1,26 +1,26 @@
-import { ADD_TODO } from '../actions/actionTypes'
+import { addTodo } from '../actions/actions'
 
 const initialState = [
   {
     id: 0,
-    task: 'test item 1',
+    todoItem: 'test item 1',
     completed: false
   },
   {
     id: 1,
-    task: 'test item 2',
+    todoItem: 'test item 2',
     completed: false
   }
 ]
 
-export default function todos(state = initialState, action) {
+export default function todoItemsArray(state = initialState, action) {
   switch(action.type) {
-    case ADD_TODO:
+    case 'ADD_TODO':
       return [
         ...state,
         {
           id: Date.now(),
-          text: action.text,
+          todoItem: action.todoItem,
           completed: false,
         }
       ]
