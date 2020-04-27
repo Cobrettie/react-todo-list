@@ -18,7 +18,7 @@ console.log('getting initialState', store.getState())
 
 const unsubscribe = store.subscribe(() => console.log('unsibscribe', store.getState))
 
-store.dispatch(addTodo('testing adding to state3'))
+store.dispatch(addTodo('using store.dispatch() in index.js to add this item'))
 
 unsubscribe()
 

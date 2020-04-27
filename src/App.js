@@ -2,28 +2,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ToDoForm from './components/TodoForm';
-import ToDoList from './components/TodoList';
+// import ToDoList from './components/TodoList';
+import VisibleTodoList  from './ContainerComponents/VisibleTodoList';
 
 import { MainAppContainerDiv, MainHeader } from './components/TodoStyles';
 import './components/Todo.css';
 
 class App extends React.Component {
 
-  toggleTodoItem = itemId => {
-    console.log('itemId', itemId);
+  // toggleTodoItem = itemId => {
+  //   console.log('itemId', itemId);
 
-    this.setState({
-      todoItems: this.state.todoItems.map(item => {
-        if (itemId === item.id) {
-          return {
-            ...item,
-            completed: !item.completed
-          }
-        }
-        return item
-      })
-    })
-  }
+  //   this.setState({
+  //     todoItems: this.state.todoItems.map(item => {
+  //       if (itemId === item.id) {
+  //         return {
+  //           ...item,
+  //           completed: !item.completed
+  //         }
+  //       }
+  //       return item
+  //     })
+  //   })
+  // }
 
   // clearCompleted = event => {
   //   event.preventDefault()
@@ -42,10 +43,8 @@ class App extends React.Component {
       <MainAppContainerDiv>
         <MainHeader>To Do</MainHeader>
         <ToDoForm />
-        <ToDoList 
-          // toggleTodoItem={this.toggleTodoItem}
-          // clearCompleted={this.clearCompleted}
-        /> 
+        {/* <ToDoList />  */}
+        <VisibleTodoList />
       </MainAppContainerDiv>
     );
   }
