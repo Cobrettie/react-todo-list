@@ -3,19 +3,12 @@ import { connect } from 'react-redux';
 import { addTodo } from '../actions/actions';
 
 class TodoForm extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      todoItem: ''
-    }
-  console.log('TodoForm component props, state', props, this.state)
+  state = {
+    todoItem: 'Test Input - Local State'
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    // set new state to array 
-    // display new data showing new item
-    // this.setState({todoItem: ''})
     this.setState({ [event.target.name]: event.target.value })
     this.props.addTodo(this.state.todoItem)
     this.setState({ todoItem: '' })
@@ -26,7 +19,7 @@ class TodoForm extends React.Component {
   }
 
   render() {
-    console.log('TodoForm local state', this.state.todoItem)
+    console.log('TodoForm component props', this.props)
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>TodoForm component</h2>
@@ -42,8 +35,6 @@ class TodoForm extends React.Component {
     )
   }
 }
-
-// this.props.addTodo('test')
 
 function mapStateToProps(state) {
   console.log('TodoForm mSTP', state)
