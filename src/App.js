@@ -7,19 +7,6 @@ import ToDoList from './components/TodoList';
 import { MainAppContainerDiv, MainHeader } from './components/TodoStyles';
 import './components/Todo.css';
 
-const todoItems = [
-  {
-    task: 'test item 1',
-    id: 1,
-    completed: false
-  },
-  {
-    task: 'test item 2',
-    id: 2,
-    completed: false
-  }
-]
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -75,7 +62,7 @@ class App extends React.Component {
         <MainHeader>To Do</MainHeader>
         <ToDoForm />
         <ToDoList 
-          todoItems={this.props.todoItemsArray} 
+          todoItems={this.props.todoItemsArray.todoItems} 
           // toggleTodoItem={this.toggleTodoItem}
           // clearCompleted={this.clearCompleted}
         /> 
