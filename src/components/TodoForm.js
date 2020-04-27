@@ -16,16 +16,17 @@ class TodoForm extends React.Component {
     // set new state to array 
     // display new data showing new item
     // this.setState({todoItem: ''})
-    addTodo(this.state.todoItem)
     this.setState({ [event.target.name]: event.target.value })
+    this.props.addTodo(this.state.todoItem)
+    this.setState({ todoItem: '' })
   }
-
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
 
   render() {
+    console.log('TodoForm local state', this.state.todoItem)
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>TodoForm component</h2>
@@ -36,11 +37,13 @@ class TodoForm extends React.Component {
           value={this.state.todoItem}
           onChange={this.handleChange}
         />
-        <button>Add</button>
+        <button type='submit'>Add</button>
       </form>
     )
   }
 }
+
+// this.props.addTodo('test')
 
 function mapStateToProps(state) {
   console.log('TodoForm mSTP', state)
@@ -49,7 +52,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {})(TodoForm);
+export default connect(mapStateToProps, { addTodo })(TodoForm);
 
 
 

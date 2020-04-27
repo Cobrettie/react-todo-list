@@ -1,5 +1,3 @@
-import { addTodo } from '../actions/actions'
-
 const initialState = [
   {
     id: 0,
@@ -10,10 +8,11 @@ const initialState = [
     id: 1,
     todoItem: 'test item 2',
     completed: false
-  }
+  },
 ]
 
-export default function todoItemsArray(state = initialState, action) {
+export default function todoItemsArrayReducer(state = initialState, action) {
+  console.log('todoItemsArrayReducer action', action)
   switch(action.type) {
     case 'ADD_TODO':
       return [

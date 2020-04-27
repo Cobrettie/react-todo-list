@@ -21,7 +21,7 @@ const ToDoList = props => {
 const mapStateToProps = state => {
   console.log('TodoList mSTP', state)
   return {
-    todoItemsArray: state.todoItemsArray
+    todoItemsArray: state.todoItemsArrayReducer
   }
 }
 
