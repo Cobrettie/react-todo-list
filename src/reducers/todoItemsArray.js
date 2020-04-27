@@ -1,6 +1,19 @@
 import { ADD_TODO } from '../actions/actionTypes'
 
-export default function todos(state = [], action) {
+const initialState = [
+  {
+    id: 0,
+    task: 'test item 1',
+    completed: false
+  },
+  {
+    id: 1,
+    task: 'test item 2',
+    completed: false
+  }
+]
+
+export default function todos(state = initialState, action) {
   switch(action.type) {
     case ADD_TODO:
       return [
