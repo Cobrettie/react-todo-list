@@ -9,22 +9,6 @@ import './components/Todo.css';
 
 class App extends React.Component {
 
-  // addTodoItem = (event, todoItem) => {
-  //   // console.log('event', event, 'todoItem', todoItem)
-  //   event.preventDefault()
-
-  //   const newTodoItem = {
-  //     task: todoItem,
-  //     id: Date.now(),
-  //     completed: false
-  //   }
-
-  //   this.setState({
-  //     todoItems: [...this.state.todoItems, newTodoItem]
-  //   })
-  //   // console.log('after adding todoItem', this.state.todoItems)
-  // }
-
   // toggleTodoItem = itemId => {
   //   console.log(itemId);
 
