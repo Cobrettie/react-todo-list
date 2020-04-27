@@ -9,21 +9,21 @@ import './components/Todo.css';
 
 class App extends React.Component {
 
-  // toggleTodoItem = itemId => {
-  //   console.log(itemId);
+  toggleTodoItem = itemId => {
+    console.log('itemId', itemId);
 
-  //   this.setState({
-  //     todoItems: this.state.todoItems.map(item => {
-  //       if (itemId === item.id) {
-  //         return {
-  //           ...item,
-  //           completed: !item.completed
-  //         }
-  //       }
-  //       return item
-  //     })
-  //   })
-  // }
+    this.setState({
+      todoItems: this.state.todoItems.map(item => {
+        if (itemId === item.id) {
+          return {
+            ...item,
+            completed: !item.completed
+          }
+        }
+        return item
+      })
+    })
+  }
 
   // clearCompleted = event => {
   //   event.preventDefault()
