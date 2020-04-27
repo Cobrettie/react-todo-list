@@ -8,10 +8,6 @@ import { MainAppContainerDiv, MainHeader } from './components/TodoStyles';
 import './components/Todo.css';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log('App props', props)
-  }
 
   // addTodoItem = (event, todoItem) => {
   //   // console.log('event', event, 'todoItem', todoItem)
@@ -57,6 +53,7 @@ class App extends React.Component {
 
 
   render() {
+    console.log('App props', this.props)
     return (
       <MainAppContainerDiv>
         <MainHeader>To Do</MainHeader>
