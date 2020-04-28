@@ -26,7 +26,7 @@ class TodoForm extends React.Component {
     console.log('TodoForm component props', this.props)
     return (
       <form onSubmit={this.handleSubmit}>
-        <h2>TodoForm component</h2>
+        <h2>Enter Task</h2>
         <input
           type='text'
           name='todoItem'
