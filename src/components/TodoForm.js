@@ -4,14 +4,18 @@ import { addTodo } from '../actions/actions';
 
 class TodoForm extends React.Component {
   state = {
-    todoItem: 'Test Input - Local State'
+    todoItem: ''
   }
 
   handleSubmit = event => {
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value })
-    this.props.addTodo(this.state.todoItem)
     this.setState({ todoItem: '' })
+    if (this.state.todoItem === '') {
+      this.props.addTodo('Task')
+    } else {
+      this.props.addTodo(this.state.todoItem)
+    }
   }
 
   handleChange = event => {
