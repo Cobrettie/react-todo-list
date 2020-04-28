@@ -8,25 +8,12 @@ import Footer from './components/Footer';
 import './components/Todo.css';
 
 class App extends React.Component {
-
-  // clearCompleted = event => {
-  //   event.preventDefault()
-
-  //   this.setState({
-  //     todoItems: this.state.todoItems.filter(item => !item.completed)
-  //   })
-  // }
-
-  // <ToDoForm addItem={this.addTodoItem} />
-
-
   render() {
     console.log('App props', this.props)
     return (
       <MainAppContainerDiv>
         <MainHeader>To Do</MainHeader>
         <ToDoForm />
-        {/* <ToDoList />  */}
         <VisibleTodoList />
         <Footer />
       </MainAppContainerDiv>
