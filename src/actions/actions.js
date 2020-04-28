@@ -25,6 +25,14 @@ export function showCompleted(id) {
   }
 }
 
+export function clearCompleted(todoItem) {
+  console.log('clearCompleted action creator', )
+  return {
+    type: 'CLEAR_COMPLETED',
+    todoItem: todoItem
+  }
+}
+
 export function setVisibilityFilter(filter) {
   console.log('setVisibilityFilter', filter)
   return {
@@ -36,6 +44,7 @@ export function setVisibilityFilter(filter) {
 export const VisibilityFilters = ({
   ADD_TODO: 'ADD_TODO',
   TOGGLE_TODO: 'TOGGLE_TODO',
+  CLEAR_COMPLETED: 'CLEAR_COMPLETED',
   SHOW_ALL: 'SHOW_ALL',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SET_VISIBILITY_FILTER:  'SET_VISIBILITY_FILTER'

@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import FilterLink from '../ContainerComponents/FilterLink';
 import { VisibilityFilters } from '../actions/actions';
 
@@ -12,3 +12,5 @@ function Footer() {
     </div>
   )
 }
+
+export default Footer;
