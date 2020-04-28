@@ -17,6 +17,14 @@ export function toggleTodo(id) {
   }
 }
 
+export function showActive(id) {
+  console.log('showActive action creator', id)
+  return {
+    type: 'SHOW_ACTIVE',
+    id
+  }
+}
+
 export function showCompleted(id) {
   console.log('showCompleted action creator', id)
   return {
@@ -46,6 +54,7 @@ export const VisibilityFilters = ({
   TOGGLE_TODO: 'TOGGLE_TODO',
   CLEAR_COMPLETED: 'CLEAR_COMPLETED',
   SHOW_ALL: 'SHOW_ALL',
+  SHOW_ACTIVE: 'SHOW_ACTIVE',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SET_VISIBILITY_FILTER:  'SET_VISIBILITY_FILTER'
 })

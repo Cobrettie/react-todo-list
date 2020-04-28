@@ -31,7 +31,7 @@ export default function todoItemsArrayReducer(state = initialState, action) {
         )
 
       case 'SHOW_COMPLETED':
-        return state.filter(item => console.log(item))
+        return state.filter(item => console.log('SHOW_COMPLETED case from reducer', item))
       
       case 'CLEAR_COMPLETED':
         return state.filter(todo => {
