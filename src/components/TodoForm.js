@@ -23,7 +23,6 @@ class TodoForm extends React.Component {
   }
 
   render() {
-    console.log('TodoForm component props', this.props)
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Enter Task</h2>
@@ -41,7 +40,6 @@ class TodoForm extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log('TodoForm mSTP', state)
   return {
     todoItemsArray: state
   }
