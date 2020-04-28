@@ -12,8 +12,6 @@ const initialState = [
 ]
 
 export default function todoItemsArrayReducer(state = initialState, action) {
-  console.log('todoItemsArrayReducer action', action)
-
   switch(action.type) {
     case 'ADD_TODO':
       return [
