@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Link = ({ active, children, onClick }) => {
-  console.log('Link Component active, children, onClick destructured props', active, children, onClick)
   return (
     <button
     onClick={onClick}
