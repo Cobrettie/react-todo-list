@@ -1,7 +1,7 @@
 const initialState = [
   {
     id: 0,
-    todoItem: 'test item 1',
+    todoItem: '',
     completed: false
   },
   {
@@ -11,7 +11,7 @@ const initialState = [
   },
 ]
 
-export default function todoItemsArrayReducer(state = initialState, action) {
+export default function todoItemsArrayReducer(state = [], action) {
   switch(action.type) {
     case 'ADD_TODO':
       return [
