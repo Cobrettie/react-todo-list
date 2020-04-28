@@ -4,7 +4,6 @@ import TodoList from '../components/TodoList';
 import { VisibilityFilters } from '../actions/actions';
 
 function getVisibleTodos (todoItemsArray, filter) {
-  console.log('getVisibleTodos Container Component for TodoList', todoItemsArray, filter)
   switch(filter) {
     case VisibilityFilters.SHOW_ALL:
       return todoItemsArray
@@ -33,7 +32,5 @@ function mapDispatchToProps(dispatch) {
     clearCompleted: todoItem => dispatch(clearCompleted(todoItem))
   }
 }
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
