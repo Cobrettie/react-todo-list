@@ -1,9 +1,7 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-
-import { toggleTodo } from '../actions/actions';
 
 import Todo from './Todo';
+
 import { TodoListContainer } from './TodoStyles'
 
 const ToDoList = props => {
@@ -20,6 +18,13 @@ const ToDoList = props => {
   )
 }
 
+export default ToDoList
+
+
+
+
+// Old code when TodoList was a stateful component, now TodoList is a presentational component
+
 // const mapStateToProps = state => {
 //   console.log('TodoList mSTP', state)
 //   return {
@@ -28,7 +33,5 @@ const ToDoList = props => {
 // }
 
 // export default connect(mapStateToProps, { toggleTodo })(ToDoList)
-
-export default ToDoList
 
 // toggleTodoItem={props.toggleTodoItem} - prop from the mapped <Todo /> component, used to add toggleTodoItem through props
