@@ -20,7 +20,6 @@ function getVisibleTodos (todoItemsArray, filter) {
 }
 
 function mapStateToProps(state) {
-  console.log('getVisibleTodos container component for TodoList mSTP', state)
   return {
     todoItemsArray: getVisibleTodos(state.todoItemsArrayReducer, state.visibilityFilter)
   }
