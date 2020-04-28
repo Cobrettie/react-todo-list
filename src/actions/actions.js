@@ -17,6 +17,14 @@ export function toggleTodo(id) {
   }
 }
 
+export function showCompleted(id) {
+  console.log('showCompleted action creator', id)
+  return {
+    type: 'SHOW_COMPLETED',
+    id
+  }
+}
+
 export function setVisibilityFilter(filter) {
   console.log('setVisibilityFilter', filter)
   return {

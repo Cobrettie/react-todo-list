@@ -30,6 +30,9 @@ export default function todoItemsArrayReducer(state = initialState, action) {
           todo => todo.id === action.id ? {...todo, completed: !todo.completed } : todo
         )
 
+      case 'SHOW_COMPLETED':
+        return state.filter(item => console.log(item))
+
     default:
       return state;
   }
